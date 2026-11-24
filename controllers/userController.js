@@ -11,7 +11,7 @@ async function register(req, res) {
         }
         const existingUser = await User.findOne({where: { email } });
         if (existingUser) {
-            return res.status(409).json({message: "Emaail sudah terdaftar." });
+            return res.status(409).json({message: "Email sudah terdaftar." });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
